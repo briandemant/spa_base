@@ -1,23 +1,11 @@
-/*!
- *   Name:
- * Author: 
- *
- * Includes :
- *   - bootstrap main css
- *   - bootstrap responsive css
- *   - custom css
- *
- */
-
-//
-// Twitter Bootstrap framwork
-// --------------------------------------------------
-
-@import 'bootstrap.less';
-
-// use spacelab theme (also in variables)
-@import 'theme/spacelab/bootswatch'; 
-
+// Twitter Bootstrap framwork 
+@import 'theme/bootstrap.less';
+	
+// use spacelab theme (also change in variables)
+@import 'theme/spacelab/bootswatch';
+ 
 body {
-	background: #f8f8f8;
+	background: lighten(@bodyBackground, 5%);
+//	padding-top: 50px;
 }
+ 

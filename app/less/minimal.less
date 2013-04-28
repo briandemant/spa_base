@@ -1,0 +1,30 @@
+// vars from bootstrap 
+@import "_variables.less"; 
+
+body {
+	background: @bodyBackground;
+}
+
+.ng-cloak #not_ready {
+	visibility: visible;
+	display:block;
+}
+
+.ng-cloak #wrapper {
+	visibility: hidden; 
+}
+
+#not_ready {
+	background: darken(@bodyBackground, 10%);
+	font-size:15px;
+	font-weight: bold;
+	position: relative;
+	width: 50%;
+	margin: 10% auto;
+	text-align: center;
+	padding: 10px;
+	border: 1px solid #888;
+	visibility: hidden;
+	display: none;
+}
+

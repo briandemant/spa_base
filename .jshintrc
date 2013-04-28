@@ -7,17 +7,18 @@
 	"camelcase": true,
 	"curly"    : true,
 	"eqeqeq"   : true,
-	"immed"    : true, 
+	"immed"    : true,
 	"latedef"  : true,
 	"newcap"   : true,
 	"noarg"    : true,
-	"quotmark" : "single",
 	"regexp"   : true,
 	"undef"    : true,
 	"unused"   : true,
-	"strict"   : true, 
-	"smarttabs": true,
-	"globals"  : {
-		"angular": false
+	"strict"   : true,
+	"smarttabs": true, 
+	"asi"      : true,
+	"globals": {
+		"angular": true,
+		"spaApp" : true
 	}
 }
