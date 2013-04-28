@@ -80,7 +80,7 @@ module.exports = function (grunt) {
 							'{.tmp,<%= yeoman.app %>}/js/{,*/}*.js',
 							'<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
 						],
-						tasks: [ 'concat:dev', 'livereload', 'jshint:dev']
+						tasks: [ 'livereload', 'jshint:dev']
 					}
 				},
 
