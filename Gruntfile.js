@@ -27,7 +27,7 @@ module.exports = function (grunt) {
 				watch        : {
 					less      : {
 						files: ['<%= yeoman.app %>/less/{,*/}*.less'],
-						tasks: ['less']
+						tasks: ['less','livereload']
 					},
 					srv       : {
 						files: ['<%= yeoman.srv %>/{,*/}*.js'],
@@ -188,15 +188,15 @@ module.exports = function (grunt) {
 				htmlmin      : {
 					dist: {
 						options: {
-							/*removeCommentsFromCDATA: true,
+							removeCommentsFromCDATA: true,
 							 // https://github.com/yeoman/grunt-usemin/issues/44
 							 //collapseWhitespace: true,
 							 collapseBooleanAttributes: true,
-							 removeAttributeQuotes: true,
+							 //removeAttributeQuotes: true,
 							 removeRedundantAttributes: true,
 							 useShortDoctype: true,
 							 removeEmptyAttributes: true,
-							 removeOptionalTags: true*/
+							 //removeOptionalTags: true
 						},
 						files  : [
 							{
@@ -263,6 +263,7 @@ module.exports = function (grunt) {
 									'*.{ico,txt}',
 									'.htaccess',
 									'components/**/*',
+									'partials/**/*',
 									'images/{,*/}*.{gif,webp,png,jpg}',
 									'css/fonts/*'
 								]
@@ -293,7 +294,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('build', [
 		'clean:dist',
 		'jshint',
-		'test',
+		//'test',
 		'less:dist',
 		'useminPrepare',
 		'imagemin',
