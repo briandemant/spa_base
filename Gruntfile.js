@@ -94,7 +94,7 @@ module.exports = function (grunt) {
 							middleware: function (connect) {
 								return [
 									lrSnippet,
-									mountFolder(connect, '.tmp'),
+									mountFolder(connect, yeomanConfig.tmp), 
 									mountFolder(connect, yeomanConfig.app),
 									backend.proxy
 								];
@@ -105,7 +105,7 @@ module.exports = function (grunt) {
 						options: {
 							middleware: function (connect) {
 								return [
-									mountFolder(connect, '.tmp'),
+									mountFolder(connect, yeomanConfig.tmp),
 									mountFolder(connect, 'test')
 								];
 							}
@@ -125,14 +125,14 @@ module.exports = function (grunt) {
 							{
 								dot: true,
 								src: [
-									'.tmp',
+									'<%= yeoman.tmp %>/*',
 									'<%= yeoman.dist %>/*',
 									'!<%= yeoman.dist %>/.git*'
 								]
 							}
 						]
 					},
-					dev : '.tmp'
+					dev : yeomanConfig.tmp
 				},
 
 				jshint: {
@@ -189,8 +189,12 @@ module.exports = function (grunt) {
 				concat: {
 					dev : {
 						files: {
-							'<%= yeoman.tmp %>/js/app.js': combinations['app.js']
-						},
+							'<%= yeoman.tmp %>/js/app.js': combinations['app.js'],
+							'<%= yeoman.tmp %>/js/head.js': combinations['head.js'],
+							'<%= yeoman.tmp %>/js/ie.js': combinations['ie.js'],
+							'<%= yeoman.tmp %>/js/angular.js': combinations['angular.js'],
+							'<%= yeoman.tmp %>/js/bootstrap.js': combinations['bootstrap.js']
+						}
 					},
 					dist: {
 						files: {
@@ -235,7 +239,7 @@ module.exports = function (grunt) {
 					dist: {
 						files: {
 							'<%= yeoman.dist %>/css/style.css': [
-								'.tmp/css/{,*/}*.css',
+								'<%= yeoman.tmp %>/css/{,*/}*.css',
 								'<%= yeoman.app %>/css/{,*/}*.css'
 							]
 						}

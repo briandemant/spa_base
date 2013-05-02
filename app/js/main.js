@@ -1,9 +1,9 @@
 'use strict';
 
 // create the app
-var spaApp = angular.module('SpaApp', []);
+var app = angular.module('SpaApp', []);
 
-spaApp.config(['$routeProvider', function ($routeProvider) {
+app.config(function ($routeProvider) {
 	$routeProvider
 			.when('/', {
 				      templateUrl: 'views/main.html',
@@ -14,6 +14,6 @@ spaApp.config(['$routeProvider', function ($routeProvider) {
 				      controller : 'MainCtrl'
 			      })
 			.otherwise({ redirectTo: '/' });
-}]);
+});
 
 
